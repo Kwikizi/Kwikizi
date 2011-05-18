@@ -1,8 +1,7 @@
 <?php
 
-require "includes/functions.php";
-
-$folder = new folder();
-$folder->testFolderConfigInstall();
+require "includes/functions_install.php";
+$install = new install();
+$install->testFolderConfigInstall();
 
 ?> 

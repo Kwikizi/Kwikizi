@@ -1,13 +1,16 @@
 <?php
 
+    require "../includes/functions_install.php";
+    $install = new install();
+
+
     if(isset($_POST)){ extract($_POST); } else { header('Location: etape2.php?id=1'); }
     if($hote != "" && $name != "" && $user != ""){
         
         try{
             
             $DB = new PDO(''.$type.':host='.$hote.';dbname='.$name.'',$user,$mdp);
-            
-            
+            $install->writeInConfig($type,$hote,$name,$user,$mdp);
             
         } catch(Exception $e) {
             
