@@ -10,7 +10,7 @@
         try{
             
             $DB = new PDO(''.$type.':host='.$hote.';dbname='.$name.'',$user,$mdp);
-            $install->writeInConfig($type,$hote,$name,$user,$mdp);
+            $install->writeInConfig($type,$hote,$name,$user,$mdp,$pref);
             
         } catch(Exception $e) {
             
@@ -29,6 +29,7 @@
     <title>Installation</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" media="screen" type="text/css" href="style.css" />
+    <script type="text/javascript" src="password_meter.js"></script>
 </head>
 <body>
 
@@ -38,7 +39,36 @@
     <div id="corps">
         
         
-        <h1>Informations relatives à la base de données</h1>
+        <h1>Informations relatives à votre site</h1>
+        
+        
+        <form action="etape3.php" method="POST">
+            
+            <table>
+                
+                <tr>
+                    <td class="name"><b>Titre : </b><br/><div class="slim">Si localhost ne marche contacter votre hébergeur.</div></td>
+                    <td><input type="text" name="titre" value="localhost"/></td>
+                </tr>
+                
+                <tr>
+                    <td class="name"><b>Pseudo : </b><br/><div class="slim">Il s'agit du pseudo de l'administrateur.</div></td>
+                    <td><input type="text" name="name" value="wordpress"/></td>
+                </tr>
+                
+                <tr>
+                    <td class="name"><b>Mot de passe : </b><br/><div class="slim">Il s'agit du mot de passe de l'administrateur.</div></td>
+                    <td><input type="password" name="user" value="" onkeyup="passwordStrength(this.value)"/>
+                    <p><span id="passwordDescription">Très faible</span><div id="passwordStrength" class="strength0"></div></p></td>
+                </tr>
+                
+            </table>
+        
+        <br/>
+        
+        <center><input type="submit" value="Continuer"/></center>
+        
+        </form>
         
         
         

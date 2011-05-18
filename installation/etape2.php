@@ -53,7 +53,7 @@
                 
                 <tr>
                     <td class="name"><b>Nom de la base : </b><br/><div class="slim">Nom de la base ou les tables vont s'inscrire.</div></td>
-                    <td><input type="text" name="name" value="wordpress"/></td>
+                    <td><input type="text" name="name" value="kwikizi"/></td>
                 </tr>
                 
                 <tr>
@@ -64,6 +64,11 @@
                 <tr>
                     <td class="name"><b>Mot de passe : </b><br/><div class="slim">Mot de passe correspondant à l'utilisateur.</div></td>
                     <td><input type="text" name="mdp" value=""/></td>
+                </tr>
+                
+                <tr>
+                    <td class="name"><b>Préfixe des tables : </b><br/><div class="slim">Cela est utile si vous faite plusieurs installation.</div></td>
+                    <td><input type="text" name="pref" value="kw_"/></td>
                 </tr>
                 
             </table>
